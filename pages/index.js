@@ -1,38 +1,39 @@
-import Link from 'next/link'
+import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div style={{ padding: '20px' }}>
+    <div style={{ minHeight: '150vh', padding: '20px' }}>
       <h1>Государственный портал</h1>
-      
-      {/* Кнопки с Link */}
-      <div style={{ display: 'flex', gap: '10px', marginTop: '20px' }}>
+
+      {/* Навигация */}  
+      <nav style={{ display: 'flex', gap: '15px', margin: '20px 0' }}>
         <Link href="/acts" passHref>
-          <button style={buttonStyle}>Реестр актов</button>
+          <a style={linkStyle}>Реестр актов</a>
         </Link>
-        
         <Link href="/fines" passHref>
-          <button style={buttonStyle}>Штрафы</button>
+          <a style={linkStyle}>Штрафы</a>
         </Link>
-        
         <Link href="/wanted" passHref>
-          <button style={buttonStyle}>Розыск</button>
+          <a style={linkStyle}>Розыск</a>
         </Link>
-        
         <Link href="/login" passHref>
-          <button style={buttonStyle}>Войти</button>
+          <a style={linkStyle}>Войти</a>
         </Link>
+      </nav>
+
+      {/* Контент страницы */}  
+      <div style={{ marginTop: '50px' }}>
+        <p>Основной контент главной страницы...</p>
       </div>
     </div>
   )
 }
 
-// Стили для кнопок
-const buttonStyle = {
+// Стили для ссылок  
+const linkStyle = {
   padding: '10px 20px',
   background: '#1e3c72',
   color: 'white',
-  border: 'none',
-  borderRadius: '5px',
-  cursor: 'pointer'
+  textDecoration: 'none',
+  borderRadius: '5px'
 }
