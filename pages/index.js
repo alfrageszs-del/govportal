@@ -2,23 +2,37 @@ import Link from 'next/link'
 
 export default function Home() {
   return (
-    <div>
+    <div style={{ padding: '20px' }}>
       <h1>Государственный портал</h1>
       
-      <nav>
-        <Link href="/acts">
-          <button>Реестр актов</button>
+      {/* Кнопки с Link */}
+      <div style={{ display: 'flex', gap: '10px', marginTop: '20px' }}>
+        <Link href="/acts" passHref>
+          <button style={buttonStyle}>Реестр актов</button>
         </Link>
-        <Link href="/fines">
-          <button>Штрафные санкции</button>
+        
+        <Link href="/fines" passHref>
+          <button style={buttonStyle}>Штрафы</button>
         </Link>
-        <Link href="/wanted">
-          <button>Федеральный розыск</button>
+        
+        <Link href="/wanted" passHref>
+          <button style={buttonStyle}>Розыск</button>
         </Link>
-        <Link href="/login">
-          <button>Войти</button>
+        
+        <Link href="/login" passHref>
+          <button style={buttonStyle}>Войти</button>
         </Link>
-      </nav>
+      </div>
     </div>
   )
+}
+
+// Стили для кнопок
+const buttonStyle = {
+  padding: '10px 20px',
+  background: '#1e3c72',
+  color: 'white',
+  border: 'none',
+  borderRadius: '5px',
+  cursor: 'pointer'
 }
